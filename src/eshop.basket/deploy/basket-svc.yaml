@@ -1,7 +1,7 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
-  name: basket-statestore
+  name: statestore
 spec:
   type: state.redis
   metadata:
@@ -13,26 +13,26 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: basket
+  name: nodeapp
   labels:
-    app: basket
+    app: node
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: basket
+      app: node
   template:
     metadata:
       labels:
-        app: basket
+        app: node
       annotations:
-        dapr.io/enabled: "false"
-        dapr.io/id: "basket-svc"
+        dapr.io/enabled: "true"
+        dapr.io/id: "nodeapp"
         dapr.io/port: "3000"
     spec:
       containers:
-      - name: basket
-        image: lgmorand/eshop-basket
+      - name: node
+        image: dapriosamples/hello-k8s-node:edge
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
