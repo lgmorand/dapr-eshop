@@ -11,16 +11,17 @@ const app = express();
 app.use(bodyParser.json());
 
 const daprPort = process.env.DAPR_HTTP_PORT || 3500;
-const stateStoreName = `basket-statestore`;
+const stateStoreName = `statestore`;
 const stateUrl = `http://localhost:${daprPort}/v1.0/state/${stateStoreName}`;
 const port = 3000;
 
-app.get('/basket', (_req, res) => {
-    fetch(`${stateUrl}/basket`)
+app.get('/order', (_req, res) => {
+    fetch(`${stateUrl}/order`)
         .then((response) => {
             if (!response.ok) {
-                throw "Could not get basket.";
+                throw "Could not get state.";
             }
+
             return response.text();
         }).then((orders) => {
             res.send(orders);
@@ -30,12 +31,13 @@ app.get('/basket', (_req, res) => {
         });
 });
 
-app.post('/addItem', (req, res) => {
+app.post('/neworder', (req, res) => {
     const data = req.body.data;
-    console.log("Adding item to basket: " + data.title);
+    const orderId = data.orderId;
+    console.log("Got a new order! Order ID: " + orderId);
 
     const state = [{
-        key: "basket",
+        key: "order",
         value: data
     }];
 

@@ -1,17 +1,14 @@
-kind: Service
-apiVersion: v1
+apiVersion: dapr.io/v1alpha1
+kind: Component
 metadata:
-  name: basket-svc
-  labels:
-    app: node
+  name: basket-statestore
 spec:
-  selector:
-    app: node
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 3000
-  type: LoadBalancer
+  type: state.redis
+  metadata:
+  - name: redisHost
+    value: redis-dapr-app.redis.cache.windows.net:6379
+  - name: redisPassword
+    value: CFbDdmlDs8hDrnYLePcmEMPNJTwGFzApnVO7Irn3v74=
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -29,7 +26,7 @@ spec:
       labels:
         app: basket
       annotations:
-        dapr.io/enabled: "true"
+        dapr.io/enabled: "false"
         dapr.io/id: "basket-svc"
         dapr.io/port: "3000"
     spec:
