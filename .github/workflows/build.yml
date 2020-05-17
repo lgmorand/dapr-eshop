@@ -17,5 +17,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: lgmorand/eshop-basket
         tags: latest
-        dockerfile: ./src/eshop.basket/Dockerfile
+        dockerfile: src/eshop.basket/Dockerfile
     
