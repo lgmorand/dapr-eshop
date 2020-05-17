@@ -15,8 +15,8 @@ const stateStoreName = `statestore`;
 const stateUrl = `http://localhost:${daprPort}/v1.0/state/${stateStoreName}`;
 const port = 3000;
 
-app.get('/order', (_req, res) => {
-    fetch(`${stateUrl}/order`)
+app.get('/basket', (_req, res) => {
+    fetch(`${stateUrl}/basket`)
         .then((response) => {
             if (!response.ok) {
                 throw "Could not get state.";
@@ -31,13 +31,13 @@ app.get('/order', (_req, res) => {
         });
 });
 
-app.post('/neworder', (req, res) => {
+app.post('/basket', (req, res) => {
     const data = req.body.data;
     const orderId = data.orderId;
     console.log("Got a new order! Order ID: " + orderId);
 
     const state = [{
-        key: "order",
+        key: "basket",
         value: data
     }];
 
@@ -60,4 +60,4 @@ app.post('/neworder', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Node App listening on port ${port}!`));
+app.listen(port, () => console.log(`basket Node App listening on port ${port}!`));

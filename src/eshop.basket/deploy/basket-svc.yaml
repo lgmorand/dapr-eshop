@@ -13,25 +13,25 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp
+  name: basket
   labels:
-    app: node
+    app: basket
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node
+      app: basket
   template:
     metadata:
       labels:
-        app: node
+        app: basket
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/id: "nodeapp"
+        dapr.io/id: "basket"
         dapr.io/port: "3000"
     spec:
       containers:
-      - name: node
+      - name: basket
         image: dapriosamples/hello-k8s-node:edge
         ports:
         - containerPort: 3000
