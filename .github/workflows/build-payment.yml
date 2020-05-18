@@ -21,5 +21,4 @@ jobs:
         tags: latest
         dockerfile: eshop.payment/Dockerfile
         workdir: src
-        context: src
     
