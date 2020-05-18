@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["eshop.order/eshop.order.csproj", "eshop.order/"]
+COPY ["/src/eshop.order/eshop.order.csproj", "eshop.order/"]
 RUN dotnet restore "eshop.order/eshop.order.csproj"
 COPY . .
 WORKDIR "/src/eshop.order"

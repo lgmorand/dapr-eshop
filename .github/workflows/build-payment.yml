@@ -21,5 +21,4 @@ jobs:
         repository: lgmorand/eshop-payment
         tags: latest
         dockerfile: src/eshop.payment/Dockerfile
-        workdir: src
     
