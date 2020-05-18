@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '**/eshop.payment/**'
+      - '**build-payment.yml'
 
 jobs:
   build:
