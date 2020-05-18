@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.basket", "eshop.basket\eshop.basket.csproj", "{75F701D0-76E6-4628-B71D-EDEEC7462326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.basket", "eshop.basket\eshop.basket.csproj", "{75F701D0-76E6-4628-B71D-EDEEC7462326}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.payment", "eshop.payment\eshop.payment.csproj", "{38E7EE1E-D0A9-40D8-ABB9-4E1335D50669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{75F701D0-76E6-4628-B71D-EDEEC7462326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75F701D0-76E6-4628-B71D-EDEEC7462326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75F701D0-76E6-4628-B71D-EDEEC7462326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E7EE1E-D0A9-40D8-ABB9-4E1335D50669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E7EE1E-D0A9-40D8-ABB9-4E1335D50669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E7EE1E-D0A9-40D8-ABB9-4E1335D50669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E7EE1E-D0A9-40D8-ABB9-4E1335D50669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

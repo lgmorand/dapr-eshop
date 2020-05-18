@@ -1,0 +1,38 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: statestore
+spec:
+  type: state.redis
+  metadata:
+  - name: redisHost
+    value: redis-dapr-app.redis.cache.windows.net:6379
+  - name: redisPassword
+    value: CFbDdmlDs8hDrnYLePcmEMPNJTwGFzApnVO7Irn3v74=
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basket
+  labels:
+    app: basket
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basket
+  template:
+    metadata:
+      labels:
+        app: basket
+      annotations:
+        dapr.io/enabled: "false"
+        dapr.io/id: "basket"
+        dapr.io/port: "3000"
+    spec:
+      containers:
+      - name: basket
+        image: lgmorand/eshop-basket
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always

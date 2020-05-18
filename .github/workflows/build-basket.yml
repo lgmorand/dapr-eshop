@@ -2,8 +2,8 @@ name: Build eshop.basket image
 
 on:
   push:
-    #paths:
-     # - '**/eshop.basket/**'
+    paths:
+      - '**/eshop.basket/**'
 
 jobs:
   build:
