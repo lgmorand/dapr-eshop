@@ -19,5 +19,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: lgmorand/eshop-payment
         tags: latest
-        dockerfile: src/eshop.payment/Dockerfile
+        dockerfile: eshop.payment/Dockerfile
+        workdir: src
+        context: src
     
