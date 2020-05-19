@@ -20,4 +20,5 @@ jobs:
         repository: lgmorand/eshop-catalog
         tags: latest
         dockerfile: src/eshop.catalog/Dockerfile
+        path: src
     

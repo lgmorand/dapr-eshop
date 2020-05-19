@@ -20,4 +20,5 @@ jobs:
         repository: lgmorand/eshop-basket
         tags: latest
         dockerfile: src/eshop.basket/Dockerfile
+        path: src
     

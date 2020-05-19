@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog
+  labels:
+    app: catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog
+  template:
+    metadata:
+      labels:
+        app: catalog
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/id: "catalog"
+        dapr.io/port: "80"
+    spec:
+      containers:
+      - name: catalog
+        image: lgmorand/eshop-catalog
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always

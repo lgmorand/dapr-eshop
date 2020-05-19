@@ -20,4 +20,5 @@ jobs:
         repository: lgmorand/eshop-orderprocessing
         tags: latest
         dockerfile: src/eshop.orderprocessing/Dockerfile
+        path: src
     

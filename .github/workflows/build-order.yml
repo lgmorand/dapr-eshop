@@ -20,5 +20,5 @@ jobs:
         repository: lgmorand/eshop-order
         tags: latest
         dockerfile: src/eshop.order/Dockerfile
-        workdir: src
+        path: src
     
