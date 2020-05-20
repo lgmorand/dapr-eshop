@@ -45,12 +45,13 @@ namespace eshop.website.Pages
                     products.Add(new Product() { Id = 7, Name = "Dress 7", Price = 179, Category = "yellow" });
                     products.Add(new Product() { Id = 8, Name = "Dress 8", Price = 189, Category = "blue" });
                     return products;
+
                 }
-                else return await _daprClient.InvokeMethodAsync<List<Product>>(Constants.Services.Catalog.Name, Constants.Services.Catalog.Actions.List, DaprHelper.GetGetHttpExtension());
+                else return await _daprClient.InvokeMethodAsync<List<Product>>(Constants.Services.Catalog.Name, Constants.Services.Catalog.Actions.Product, DaprHelper.GetGetHttpExtension());
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message, ex);
+                _logger.LogError(ex, ex.Message);
             }
 
             return null;

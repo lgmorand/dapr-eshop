@@ -32,6 +32,7 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/id: "website"
         dapr.io/port: "80"
+        dapr.io/log-level: "debug"
     spec:
       containers:
       - name: website

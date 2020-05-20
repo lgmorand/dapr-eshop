@@ -15,7 +15,7 @@ spec:
         app: payment
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/id: "payment"
+        dapr.io/id: "payment-app"
         dapr.io/port: "80"
     spec:
       containers:

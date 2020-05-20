@@ -27,7 +27,7 @@ spec:
         app: basket
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/id: "basket"
+        dapr.io/id: "basket-app"
         dapr.io/port: "3000"
     spec:
       containers:
