@@ -23,9 +23,9 @@ namespace eshop.website.Pages
             _configuration = configuration;
         }
 
-        public async void OnGet()
+        public void OnGet()
         {
-            Products = await GetProducts();
+            Products = GetProducts().Result;
         }
 
         private async Task<List<Product>> GetProducts()
