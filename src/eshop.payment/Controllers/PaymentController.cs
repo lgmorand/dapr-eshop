@@ -15,7 +15,6 @@ namespace eshop.payment.Controllers
         }
 
         [HttpPost]
-        [Route("Pay")]
         public bool Pay()
         {
             _logger.Log(LogLevel.Information, "Payment successful");
