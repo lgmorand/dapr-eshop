@@ -1,5 +1,5 @@
 /*  ---------------------------------------------------
-    Template Name: Violet 
+    Template Name: Violet
     Description: Violet ecommerce Html Template
     Author: Colorlib
     Author URI: https://colorlib.com/
@@ -10,7 +10,6 @@
 'use strict';
 
 (function ($) {
-
     /*------------------
         Preloader
     --------------------*/
@@ -101,7 +100,6 @@
         }
     });
 
-
     /*------------------
         Carousel Slider
     --------------------*/
@@ -113,7 +111,6 @@
         dots: true,
         autoplay: true,
     });
-    
 
     /*------------------
         Magnific Popup
@@ -169,5 +166,4 @@
     $(".payment-method ul li label").on('click', function () {
         $(this).toggleClass('active');
     });
-
 })(jQuery);

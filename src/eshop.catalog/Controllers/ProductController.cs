@@ -29,7 +29,7 @@ namespace eshop.catalog.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Product> List()
+        public IEnumerable<Product> Get()
         {
             _logger.LogInformation("List products had been called");
             return Products;

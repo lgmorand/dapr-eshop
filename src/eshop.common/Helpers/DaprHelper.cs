@@ -1,7 +1,4 @@
 ﻿using Dapr.Client.Http;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace eshop.common
 {

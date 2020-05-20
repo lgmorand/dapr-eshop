@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace eshop.common
+﻿namespace eshop.common
 {
     public class Product
     {

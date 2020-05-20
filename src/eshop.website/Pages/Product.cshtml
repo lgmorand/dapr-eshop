@@ -35,18 +35,17 @@
                 <div class="product-slider owl-carousel">
                     <div class="product-img">
                         <figure>
-                            <img src="/img/products/@Html.Raw(Model.ProductId)" alt="">
-                            <div class="p-status">new</div>
+                            <img src="/img/products/img-@(Model.ProductId).jpg" alt="">
+                            <div class="p-status">new</div>e
                         </figure>
                     </div>
                     <div class="product-img">
                         <figure>
-                            <img src="/img/product/@Html.Raw(Model.ProductId)" alt="">
+                            <img src="/img/product/img-@(Model.ProductId).jpg" alt="">
                             <div class="p-status">new</div>
                         </figure>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-6">
                 <div class="product-content">
@@ -77,11 +76,10 @@
                     </div>
                     <a href="#" class="primary-btn pc-btn">Add to cart</a>
                     <div>
-                        <br/><br/>
+                        <br /><br />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
