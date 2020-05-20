@@ -3,32 +3,32 @@
 @{
     ViewData["Title"] = "Eshop Website";
 }
-     
-    <div class="header-info">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="header-item">
-                        <img src="img/icons/delivery.png" alt="">
-                        <p>Free shipping on orders over $30 in USA</p>
-                    </div>
+
+<div class="header-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="header-item">
+                    <img src="img/icons/delivery.png" alt="">
+                    <p>Free shipping on orders over $30 in USA</p>
                 </div>
-                <div class="col-md-4 text-left text-lg-center">
-                    <div class="header-item">
-                        <img src="img/icons/voucher.png" alt="">
-                        <p>20% Student Discount</p>
-                    </div>
+            </div>
+            <div class="col-md-4 text-left text-lg-center">
+                <div class="header-item">
+                    <img src="img/icons/voucher.png" alt="">
+                    <p>20% Student Discount</p>
                 </div>
-                <div class="col-md-4 text-left text-xl-right">
-                    <div class="header-item">
-                        <img src="img/icons/sales.png" alt="">
-                        <p>30% off on dresses. Use code: 30OFF</p>
-                    </div>
+            </div>
+            <div class="col-md-4 text-left text-xl-right">
+                <div class="header-item">
+                    <img src="img/icons/sales.png" alt="">
+                    <p>30% off on dresses. Use code: 30OFF</p>
                 </div>
             </div>
         </div>
     </div>
-    @*<section class="hero-slider">
+</div>
+@*<section class="hero-slider">
         <div class="hero-items owl-carousel">
             <div class="single-slider-item set-bg" data-setbg="img/slider-1.jpg">
                 <div class="container">
@@ -66,6 +66,23 @@
         </div>
     </section>*@
 
+@if (Model.Products == null)
+{
+    <section class="latest-products spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2>There are no products</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+
     <section class="latest-products spad">
         <div class="container">
             <div class="product-filter">
@@ -76,16 +93,30 @@
                         </div>
                         <ul class="product-controls">
                             <li data-filter="*">All</li>
-                            <li data-filter=".dresses">Dresses</li>
-                            <li data-filter=".bags">Bags</li>
-                            <li data-filter=".blond">Blond</li>
-                            <li data-filter=".red">Red hair</li>
+                            <li data-filter=".white">White</li>
+                            <li data-filter=".blue">Blue</li>
+                            <li data-filter=".yellow">Yellow</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row" id="product-list">
-                <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                @foreach (eshop.common.Product p in Model.Products)
+                {
+                    <div class="col-lg-3 col-sm-6 mix all dresses @p.Category">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="/Product/1"><img src="img/products/img-@(p.Id).jpg" alt=""></a>
+                                <div class="p-status">new</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>@p.Name</h6>
+                                <p>$@p.Price</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @*<div class="col-lg-3 col-sm-6 mix all dresses bags">
                     <div class="single-product-item">
                         <figure>
                             <a href="/Product/1"><img src="img/products/img-1.jpg" alt=""></a>
@@ -179,7 +210,8 @@
                             <p>$35.50</p>
                         </div>
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
     </section>
+}

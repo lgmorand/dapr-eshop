@@ -9,7 +9,6 @@ namespace eshop.website.Pages
 {
     public class ProductModel : PageModel
     {
-        [BindProperty]
         public string ProductId { get; set; }
 
         public void OnGet(string productId)

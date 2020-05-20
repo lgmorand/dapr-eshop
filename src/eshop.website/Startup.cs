@@ -15,7 +15,11 @@ namespace eshop.website
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                                    //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                                    .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -24,7 +28,8 @@ namespace eshop.website
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddControllers().AddDapr();
+            services.AddDaprClient();
+            //services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +55,7 @@ namespace eshop.website
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapSubscribeHandler();
                 endpoints.MapRazorPages();
             });
         }
